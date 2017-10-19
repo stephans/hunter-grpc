@@ -65,7 +65,12 @@
     return 'endif()\n'
   %>
 
-  cmake_minimum_required(VERSION 2.8)
+  cmake_minimum_required(VERSION 3.0)
+
+  HunterGate(
+      URL "https://github.com/ruslo/hunter/archive/v0.19.125.tar.gz"
+      SHA1 "371aef6239eff8639fe2cd94afef0f4d9f733302"
+  )
 
   set(PACKAGE_NAME      "grpc")
   set(PACKAGE_VERSION   "${settings.cpp_version}")
@@ -73,7 +78,7 @@
   set(PACKAGE_TARNAME   "<%text>${PACKAGE_NAME}-${PACKAGE_VERSION}</%text>")
   set(PACKAGE_BUGREPORT "https://github.com/grpc/grpc/issues/")
   project(<%text>${PACKAGE_NAME}</%text> C CXX)
-  
+
   set(gRPC_INSTALL_BINDIR "<%text>${CMAKE_INSTALL_PREFIX}</%text>/bin" CACHE PATH "Installation directory for executables")
   set(gRPC_INSTALL_LIBDIR "<%text>${CMAKE_INSTALL_PREFIX}</%text>/lib" CACHE PATH "Installation directory for libraries")
   set(gRPC_INSTALL_INCLUDEDIR "<%text>${CMAKE_INSTALL_PREFIX}</%text>/include" CACHE PATH "Installation directory for headers")

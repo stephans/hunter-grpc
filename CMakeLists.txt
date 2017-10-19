@@ -21,7 +21,12 @@
 
 
 
-cmake_minimum_required(VERSION 2.8)
+cmake_minimum_required(VERSION 3.0)
+
+HunterGate(
+    URL "https://github.com/ruslo/hunter/archive/v0.19.125.tar.gz"
+    SHA1 "371aef6239eff8639fe2cd94afef0f4d9f733302"
+)
 
 set(PACKAGE_NAME      "grpc")
 set(PACKAGE_VERSION   "1.6.6")
