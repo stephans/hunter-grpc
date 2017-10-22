@@ -129,10 +129,7 @@ if("${gRPC_ZLIB_PROVIDER}" STREQUAL "module")
 elseif("${gRPC_ZLIB_PROVIDER}" STREQUAL "package")
   hunter_add_package(ZLIB)
   find_package(ZLIB CONFIG REQUIRED)
-  if(TARGET ZLIB::ZLIB)
-    set(_gRPC_ZLIB_LIBRARIES ZLIB::ZLIB)
-  endif()
-  set(_gRPC_FIND_ZLIB "if(NOT ZLIB_FOUND)\n  find_package(ZLIB)\nendif()")
+  set(_gRPC_ZLIB_LIBRARIES ZLIB::zlib)
 endif()
 
 if("${gRPC_CARES_PROVIDER}" STREQUAL "module")
@@ -7198,7 +7195,6 @@ target_include_directories(grpc_print_google_default_creds_token
 
 target_link_libraries(grpc_print_google_default_creds_token
   ${_gRPC_ALLTARGETS_LIBRARIES}
-  ${_gRPC_ZLIB_LIBRARIES}
   grpc
   gpr
 )
