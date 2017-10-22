@@ -7198,6 +7198,7 @@ target_include_directories(grpc_print_google_default_creds_token
 
 target_link_libraries(grpc_print_google_default_creds_token
   ${_gRPC_ALLTARGETS_LIBRARIES}
+  ${_gRPC_ZLIB_LIBRARIES}
   grpc
   gpr
 )
