@@ -42,6 +42,7 @@ if(gRPC_RE2_PROVIDER STREQUAL "module")
     set(gRPC_INSTALL FALSE)
   endif()
 elseif(gRPC_RE2_PROVIDER STREQUAL "package")
+  hunter_add_package(re2)
   find_package(re2 REQUIRED CONFIG)
 
   if(TARGET re2::re2)
