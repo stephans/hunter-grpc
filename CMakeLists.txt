@@ -76,7 +76,7 @@ endif()
 # "module": build the dependency using sources from git submodule (under third_party)
 # "package": use cmake's find_package functionality to locate a pre-installed dependency
 
-set(gRPC_ZLIB_PROVIDER "package" CACHE STRING "Provider of zlib library")
+set(gRPC_ZLIB_PROVIDER "module" CACHE STRING "Provider of zlib library")
 set_property(CACHE gRPC_ZLIB_PROVIDER PROPERTY STRINGS "module" "package")
 
 set(gRPC_CARES_PROVIDER "package" CACHE STRING "Provider of c-ares library")
